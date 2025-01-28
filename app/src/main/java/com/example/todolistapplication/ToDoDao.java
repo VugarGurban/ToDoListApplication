@@ -6,6 +6,7 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
+import java.util.Collection;
 import java.util.List;
 
 @Dao
@@ -14,7 +15,7 @@ public interface ToDoDao {
     void insert(ToDoItem item);
 
     @Query("SELECT * FROM todo_items")
-    LiveData<ToDoItem> getAllItems();
+    List<ToDoItem> getAllItems();
 
     @Delete
     void delete(ToDoItem item);
